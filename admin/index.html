@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Tab Example</title>
+    <style>
+        .menu {
+            display: flex;
+            background-color: #fefefe;
+            padding: 10px 10px 0 0;
+            margin: 0 325px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 10px 0 10px ;
+            background: #fefefe;
+        }
+
+        .menu a
+
+
+        .menu a.clicked {
+            background-color: #ffffff;
+            box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            margin: 0 325px;
+            box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+        }
+
+        .content.show {
+            display: block;
+        }
+
+        .active {
+            background: #ffffff;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="menu">
+    <a onclick="showContent('problem')">Problem</a>
+    <a onclick="showContent('submission')">Submissions</a>
+    <a onclick="showContent('leaderboard')">Leaderboard</a>
+    <a onclick="showContent('discussion')">Discussion</a>
+    <a onclick="showContent('editorial')">Editorial</a>
+</div>
+
+<div class="content" id="problem">
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the content of the Home page.</p>
+</div>
+
+<div class="content" id="submission">
+    <h1>About Us</h1>
+    <p>This is the content of the About page.</p>
+</div>
+
+<div class="content" id="leaderboard">
+    <h1>Contact Us</h1>
+    <p>This is the content of the Contact page.</p>
+</div>
+
+<div class="content" id="discussion">
+    <h1>DISCUSSION</h1>
+    <p>This is the content of the Contact page.</p>
+</div>
+
+
+<div class="content" id="editorial">
+    <h1>CONTENT</h1>
+    <p>This is the content of the Contact page.</p>
+</div>
+
+
+
+<script>
+    function showContent(contentId) {
+        const contents = document.getElementsByClassName('content');
+        for (let i = 0; i < contents.length; i++) {
+            contents[i].classList.remove('show');
+            contents[i].classList.remove('active');
+        }
+
+        const contentToShow = document.getElementById(contentId);
+        contentToShow.classList.add('show');
+        contentToShow.classList.add('active');
+
+
+    }
+</script>
+</body>
+</html>
